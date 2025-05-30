@@ -1,0 +1,70 @@
+<main>
+  <article>
+    <h2>Inline Bar Charts</h2>
+
+    <h3 class="paragraph-heading">Quick Update</h3>
+    <p>
+      Update this chart to use the section types for the gallery, so you can
+      track which section is getting "too" big ... or at least, it can be a way
+      to balance out your content, making sure no category is ignored too.
+    </p>
+
+    <h3 class="paragraph-heading">More Use Cases</h3>
+    <p>
+      You could even have multiple of these percent charts for different project
+      calculations, like materials used. Which could be helpful for figuring out
+      how to price out future projects.
+    </p>
+
+    <h3 class="paragraph-heading">Potential Future Update</h3>
+    <p>
+      Consider exploring other bar chart options. This one clearly needs to be
+      renamed bar-percentage-chart because it is percentaged displayed in a
+      single bar. It should be really easy to make a vertical or horizontal
+      bar-chart option. Even a circle-pie-chart. Line graphs might be a
+      challenge, because they are connecting random vectors, where these other
+      charts are percentage or individual disconnected points, but it could be
+      fun to make a tool that could do all 3 of those drastically different
+      functions. Then explore converting it to other frameworks, since it is
+      currently one that requires angular to work.
+    </p>
+
+    <div class="test-chart-container">
+      <h4>Art Material Usage</h4>
+      <zab-inline-bar-chart
+        [chartItems]="testChartDataA"
+        [isChartThick]="true"
+        [borderColor]="'gray'"
+        [remainderColor]="'white'"
+        [totalValue]="100"
+      ></zab-inline-bar-chart>
+
+      <zab-chart-key
+        [chartItems]="testChartDataA"
+        [borderColor]="'gray'"
+        [remainderColor]="'white'"
+        [remainderLabel]="'Other'"
+        [totalValue]="100"
+      ></zab-chart-key>
+    </div>
+
+    <div class="test-chart-container">
+      <h4>Personal Time Usage</h4>
+      <zab-inline-bar-chart
+        [chartItems]="testChartDataB"
+        [isChartThick]="false"
+        [borderColor]="'gray'"
+        [remainderColor]="'white'"
+        [totalValue]="100"
+      ></zab-inline-bar-chart>
+
+      <zab-chart-key
+        [chartItems]="testChartDataB"
+        [borderColor]="'gray'"
+        [remainderColor]="'white'"
+        [remainderLabel]="'Other'"
+        [totalValue]="100"
+      ></zab-chart-key>
+    </div>
+  </article>
+</main>

@@ -1,0 +1,33 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:slink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  height="100%"
+  [ngClass]="isChartThick ? 'thick-chart' : 'thin-chart'"
+>
+  <!--Empty Background Bar-->
+  <rect x="0" y="0" width="100%" height="100%" [attr.fill]="colors.gray" />
+
+  <!--Filled Bars-->
+  <rect
+    *ngFor="let bar of bars"
+    y="0"
+    height="100%"
+    [attr.fill]="bar.color"
+    [attr.x]="bar.xPosition"
+    [attr.width]="bar.widthPercentage"
+  />
+
+  <!--Border-->
+  <rect
+    *ngIf="borderColor"
+    x="0"
+    y="0"
+    width="100%"
+    height="100%"
+    fill="transparent"
+    [attr.stroke]="borderColor"
+    stroke-width="2"
+    stroke-linecap="square"
+  />
+</svg>

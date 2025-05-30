@@ -1,0 +1,27 @@
+.key-color-title {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.25rem;
+}
+
+.legend {
+  margin: auto 0;
+  font-size: small;
+  flex: 1;
+}
+
+.invalid {
+  color: red; // can be customized
+}
+
+.chart-key-section {
+  display: flex;
+  margin: 0.5rem 0;
+  border-bottom: 1px dashed var(--text-color);
+}
+
+.chart-key-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

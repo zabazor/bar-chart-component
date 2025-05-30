@@ -1,0 +1,57 @@
+<section class="legend">
+  <ng-container *ngFor="let chartKey of chartKeys">
+    <ng-container *ngIf="chartKey.label">
+      <section class="chart-key-section">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:slink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          height="100%"
+          width="100%"
+          class="key-color-title"
+        >
+          <rect
+            y="0"
+            x="0"
+            height="100%"
+            width="100%"
+            [attr.fill]="chartKey.color"
+          />
+
+          <rect
+            y="0"
+            x="0"
+            height="100%"
+            width="100%"
+            fill="transparent"
+            [attr.stroke]="borderColor"
+            stroke-width="2"
+            stroke-linecap="square"
+          />
+        </svg>
+
+        <div class="chart-key-label">
+          <span class="legend-label">
+            {{ chartKey.label }}
+          </span>
+
+          <span class="legend-value">
+            <ng-container *ngIf="chartKey.invalid; else valid"
+              >N/A</ng-container
+            >
+
+            <ng-template #valid>
+              <ng-container *ngIf="isCurrency; else noValueLabel">
+                {{ chartKey.value | currency : "USD" : "symbol" : "1.0-0" }}
+              </ng-container>
+
+              <ng-template #noValueLabel>
+                {{ chartKey.value }}
+              </ng-template>
+            </ng-template>
+          </span>
+        </div>
+      </section>
+    </ng-container>
+  </ng-container>
+</section>
